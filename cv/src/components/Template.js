@@ -1,16 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-
-
 class Template extends React.Component{
   renderList(){
     return(
       <div>
-      <Link to= "/Education">Education</Link><br />
-      <Link to= "/Projects">Projects</Link><br />
-      <Link to= "/Technologies">Technologies</Link><br />
-      <Link to= "/Websites">Websites</Link>
+      <Link to= "/education">Education</Link><br />
+      <Link to= "/projects">Projects</Link><br />
+      <Link to= "/skills">Skills</Link><br />
+      <Link to= "/websites">Websites</Link>
       </div>
     );
   };

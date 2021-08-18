@@ -1,19 +1,19 @@
 import React, {Component} from 'react';
 import { connect } from 'react-redux';
-import { selectWebsite } from '../../actions';
+import { selectSkill } from '../../actions';
 import { Link } from 'react-router-dom';
 
-class WebsiteList extends Component{
+class SkillsList extends Component{
   renderList(){
-    return this.props.websites.map((website) => {
+    return this.props.skills.map((skill) => {
       return (
           <div className = "ui center aligned container">
             <h1>
               <Link 
-              to= '/websites/details'
-              onClick = {() => this.props.selectWebsite(website)}
+              to= '/skills/details'
+              onClick = {() => this.props.selectSkill(skill)}
               >
-                {website.title}
+                {skill.title}
               </Link>
           </h1>
         </div>
@@ -27,9 +27,9 @@ class WebsiteList extends Component{
 }
 
 const mapStateToProps = (state) => {
-  return {websites: state.websites};
+  return {skills: state.skills};
 }
 
-export default connect(mapStateToProps, {selectWebsite} )(WebsiteList);
+export default connect(mapStateToProps, {selectSkill} )(SkillsList);
 
 

@@ -7,16 +7,15 @@ class EducationList extends Component{
   renderList(){
     return this.props.educations.map((education) => {
       return (
-        <div className="item" key={education.schoolName}>
-          <div className="right floated content">
+        <div className = "ui center aligned container">
+          <h1>
             <Link 
             to= '/education/details'
             onClick = {() => this.props.selectEducation(education)}
             >
-              Select
+              {education.schoolName}
             </Link>
-          </div>
-          <div className = "content"> {education.schoolName}</div>
+          </h1>
         </div>
       );
     });

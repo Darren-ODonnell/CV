@@ -1,27 +1,18 @@
 import { combineReducers } from 'redux';
+import { educationsReducer, selectedEducationReducer } from './EducationReducer';
+import { projectsReducer, selectedProjectReducer } from './ProjectReducer';
+import { skillsReducer, selectedSkillReducer } from './SkillsReducer';
+import { websitesReducer, selectedWebsiteReducer} from './WebsiteReducer';
 
-const educationsReducer = () => {
-  return [
-  {schoolName: 'St. Mac Dara\'s Community College',
-  educationType: 'Leaving Certificate',
-  gradeType: 'Points',
-  grade: '445'},
-  {schoolName: 'Technological University of Dublin',
-  educationType: 'Bacholers of Science - Business Computing',
-  gradeType: 'GPA',
-  grade: '82%'},
-  ]
-};
-
-const selectedEducationReducer = (selectedEducation = null, action) => {
-if(action.type === 'EDUCATION_SELECTED'){
-  return action.payload;
-}
-return selectedEducation;
-};
 
 export default combineReducers({
   educations: educationsReducer,
-  selectedEducation: selectedEducationReducer
-})
+  selectedEducation: selectedEducationReducer,
+  projects: projectsReducer,
+  selectedProject: selectedProjectReducer,
+  skills: skillsReducer,
+  selectedSkill: selectedSkillReducer,
+  websites: websitesReducer,
+  selectedWebsite: selectedWebsiteReducer
+});
 
